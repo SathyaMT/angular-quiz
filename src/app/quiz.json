@@ -1,0 +1,137 @@
+[
+  {
+    "category_name": "maths",
+    "questions": [
+      {
+        "question": "5 + 7 = ?",
+        "options": [
+          "10",
+          "11",
+          "12",
+          "13"
+        ],
+        "answerIndex": 2
+      },
+      {
+        "question": "5 + 7 = ?",
+        "options": [
+          "10",
+          "11",
+          "12",
+          "13"
+        ],
+        "answerIndex": 2
+      },
+      {
+        "question": "5 + 7 = ?",
+        "options": [
+          "10",
+          "11",
+          "12",
+          "13"
+        ],
+        "answerIndex": 2
+      },
+      {
+        "question": "5 + 7 = ?",
+        "options": [
+          "10",
+          "11",
+          "12",
+          "13"
+        ],
+        "answerIndex": 2
+      }
+    ]
+  },
+  {
+    "category_name": "physics",
+    "questions": [
+      {
+        "question": "5 + 7 = ?",
+        "options": [
+          "10",
+          "11",
+          "12",
+          "13"
+        ],
+        "answerIndex": 2
+      },
+      {
+        "question": "5 + 7 = ?",
+        "options": [
+          "10",
+          "11",
+          "12",
+          "13"
+        ],
+        "answerIndex": 2
+      },
+      {
+        "question": "5 + 7 = ?",
+        "options": [
+          "10",
+          "11",
+          "12",
+          "13"
+        ],
+        "answerIndex": 2
+      },
+      {
+        "question": "5 + 7 = ?",
+        "options": [
+          "10",
+          "11",
+          "12",
+          "13"
+        ],
+        "answerIndex": 2
+      }
+    ]
+  },
+  {
+    "category_name" : "chemistry",
+    "questions": [
+      {
+        "question": "5 + 7 = ?",
+        "options": [
+          "10",
+          "11",
+          "12",
+          "13"
+        ],
+        "answerIndex": 2
+      },
+      {
+        "question": "5 + 7 = ?",
+        "options": [
+          "10",
+          "11",
+          "12",
+          "13"
+        ],
+        "answerIndex": 2
+      },
+      {
+        "question": "5 + 7 = ?",
+        "options": [
+          "10",
+          "11",
+          "12",
+          "13"
+        ],
+        "answerIndex": 2
+      },
+      {
+        "question": "5 + 7 = ?",
+        "options": [
+          "10",
+          "11",
+          "12",
+          "13"
+        ],
+        "answerIndex": 2
+      }
+    ]
+  }
+]
