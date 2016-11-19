@@ -12,6 +12,7 @@ import {DashboardComponentComponent} from "./dashboard-component/dashboard-compo
 import {CategoryListComponentComponent} from "./category-list-component/category-list-component.component";
 import {QuizAttenComponentComponent} from "./quiz-atten-component/quiz-atten-component.component";
 import {QuizServiceService} from "./quiz-service.service";
+import {CoinServiceService} from "./coin-service.service";
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import {QuizServiceService} from "./quiz-service.service";
     HttpModule,
     ROUTE
   ],
-  providers: [QuizServiceService],
+  providers: [QuizServiceService, CoinServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

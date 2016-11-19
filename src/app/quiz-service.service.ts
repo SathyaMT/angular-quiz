@@ -36,4 +36,22 @@ export class QuizServiceService {
     });
   }
 
+  getQuestions(category_name : string) : Promise<any> {
+    return new Promise((resolve, reject) => {
+      if (this.questions.length > 0) {
+        resolve(this.randomizedQuestions(category_name));
+      } else {
+        this.getJsonData().then(data => resolve(this.randomizedQuestions(category_name)));
+      }
+    });
+  }
+  randomizedQuestions (category_name) {
+    for(let i of this.questions) {
+      if(i.category_name == category_name) {
+        return i.questions;
+      }
+    }
+
+  }
+
 }

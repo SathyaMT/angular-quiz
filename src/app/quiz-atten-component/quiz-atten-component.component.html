@@ -1,3 +1,10 @@
-<p>
-  quiz-atten-component works!
-</p>
+<div>
+  {{question.question}}
+  <span class="pull-right">{{questionTime}}</span>
+  <ul>
+      <li *ngFor="let option of question.options ,let index = index" (click)="nextQuestion(index)" > {{option}}</li>
+    </ul>
+  <button class="btn btn-primary" (click)="extraTime()" >Extra time 5 coins</button>
+  <button class="btn btn-primary" (click)="removeWrongOption()" >Wrong answer 10 coins</button>
+</div>
+

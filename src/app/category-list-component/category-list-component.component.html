@@ -1,5 +1,5 @@
 <div class="center-align">
   <ul>
-    <li *ngFor="let categoryName of categoryList">{{categoryName}}</li>
+    <li *ngFor="let categoryName of categoryList" [routerLink]="['/quiz-atten/'+categoryName]">{{categoryName}}</li>
   </ul>
 </div>
