@@ -13,6 +13,7 @@ import {CategoryListComponentComponent} from "./category-list-component/category
 import {QuizAttenComponentComponent} from "./quiz-atten-component/quiz-atten-component.component";
 import {QuizServiceService} from "./quiz-service.service";
 import {CoinServiceService} from "./coin-service.service";
+import {HeaderComponentComponent} from "./header-component/header-component.component";
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import {CoinServiceService} from "./coin-service.service";
     QuizComponentComponent,
     CategoryListComponentComponent,
     QuizAttenComponentComponent,
+    HeaderComponentComponent
   ],
   imports: [
     BrowserModule,

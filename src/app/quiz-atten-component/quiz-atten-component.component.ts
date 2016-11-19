@@ -17,6 +17,11 @@ export class QuizAttenComponentComponent implements OnInit, OnDestroy {
   private questionIndex : number = 0;
   private questionTime : number = 20;
   private clearTime : any = false;
+  private questionNumber: number;
+  private opacityValue:number = 1;
+  private userNotSelectedAnswer: boolean = true;
+  private progressBarWidth: number = 100;
+  private reduceProgressBarWidth : number = this.progressBarWidth/this.questionTime;
 
   constructor(private route : ActivatedRoute, private quizService : QuizServiceService, private coinService : CoinServiceService) {
     this.subscription = this.route.params.subscribe(
@@ -29,29 +34,39 @@ export class QuizAttenComponentComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-   this.quizService.getQuestions(this.categoryName).then(data => {
-     this.questionList = data;
-     if(this.questionList.length > 0) {
-       this.question = this.questionList[this.questionIndex];
-       this.timer();
-     }
-   });
+    this.quizService.getQuestions(this.categoryName).then(data => {
+      this.questionList = data;
+      if(this.questionList.length > 0) {
+        this.question = this.questionList[this.questionIndex];
+        this.questionNumber = 1;
+        this.timer();
+      }
+    });
   }
   nextQuestion(currentQuestionAnswer) {
+    this.opacityValue = 0.4;
+    this.userNotSelectedAnswer = false;
     if(currentQuestionAnswer == this.question.answerIndex) {
       this.coinService.addCoinCount(5);
     }
-    if(this.questionList.length > this.questionIndex +1) {
-      this.question = this.questionList[++this.questionIndex];
-      this.questionTime = 20;
-      this.timer();
-    } else {
-      this.questionTime = null;
-      this.question = [];
-      if(this.clearTime) {
-        clearInterval(this.clearTime);
+    setTimeout(() => {
+      if(this.questionList.length > this.questionIndex +1) {
+        this.question = this.questionList[++this.questionIndex];
+        this.questionTime = 20;
+        this.progressBarWidth = 100;
+        this.timer();
+        this.questionNumber++;
+        this.opacityValue = 1;
+        this.userNotSelectedAnswer = true;
+      } else {
+        this.questionTime = null;
+        this.question = [];
+        if(this.clearTime) {
+          clearInterval(this.clearTime);
+        }
       }
-    }
+    }, 2000);
+
   }
 
   ngOnDestroy() {
@@ -64,6 +79,7 @@ export class QuizAttenComponentComponent implements OnInit, OnDestroy {
     this.clearTime = setInterval(() => {
       if (this.questionTime) {
         this.questionTime--;
+        this.progressBarWidth -= this.reduceProgressBarWidth;
       } else {
         clearInterval(this.clearTime);
       }
@@ -74,11 +90,12 @@ export class QuizAttenComponentComponent implements OnInit, OnDestroy {
     let result = this.coinService.decreaseCoinCount(5);
     if(result) {
       this.questionTime += 5;
+      this.progressBarWidth += 20;
     }
   }
 
   removeWrongOption() {
-    let result = this.coinService.decreaseCoinCount(5);
+    let result = this.coinService.decreaseCoinCount(10);
     if(result) {
       for(let option in this.question.options) {
         if(option != this.question.answerIndex) {
@@ -89,9 +106,12 @@ export class QuizAttenComponentComponent implements OnInit, OnDestroy {
           return;
         }
       }
+    } else {
+      alert("you have no coins");
     }
 
   }
+
 
 
 

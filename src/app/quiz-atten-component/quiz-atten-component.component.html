@@ -1,10 +1,30 @@
-<div>
-  {{question.question}}
-  <span class="pull-right">{{questionTime}}</span>
-  <ul>
-      <li *ngFor="let option of question.options ,let index = index" (click)="nextQuestion(index)" > {{option}}</li>
-    </ul>
-  <button class="btn btn-primary" (click)="extraTime()" >Extra time 5 coins</button>
-  <button class="btn btn-primary" (click)="removeWrongOption()" >Wrong answer 10 coins</button>
+
+<div class="p-t-120 text-center">
+  <h1>{{questionNumber}} / {{questionList.length}}</h1>
+  <h2>{{question.question}}</h2>
+  <div class="m-40">
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" aria-valuenow="questionTime" aria-valuemin="0" aria-valuemax="100" [style.width]="progressBarWidth + '%'">
+      </div>
+    </div>
+    <span class="sr-only">{{questionTime}}</span>
+  </div>
 </div>
+<div class="row">
+  <div class="col-md-6" *ngFor="let option of question.options ,let index = index" (click)="nextQuestion(index)" id="index" [style.opacity]="opacityValue" [style.display]="'block'">
+    <a href="javascript:void(0)" class="btn btn-raised btn-primary">{{option}} </a>
+  </div>
+</div>
+<h1 class="text-center p-t-20">Boosters</h1>
+<div class="row">
+  <div class="col-md-6">
+    <a href="javascript:void(0)" class="btn btn-raised btn-info" (click)="extraTime()">Increase your time with 5 seconds</a>
+    <span><img src="assets/img/coin.png" height="40px"> 5 coins</span>
+  </div>
+  <div class="col-md-6">
+    <a href="javascript:void(0)" class="btn btn-raised btn-info" (click)="removeWrongOption()">Delete 1 wrong answer</a>
+    <span><img src="assets/img/coin.png" height="40px"> 10 coins</span>
+  </div>
+</div>
+
 
