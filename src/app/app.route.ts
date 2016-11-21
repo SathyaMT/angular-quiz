@@ -7,7 +7,7 @@ const App_Routes: Routes = [
   { path: '', redirectTo:'/Dashboard', pathMatch:'full'},
   { path: 'Dashboard', component: DashboardComponentComponent},
   { path: 'category-list', component: CategoryListComponentComponent},
-  { path: 'quiz-atten', component: QuizAttenComponentComponent}
+  { path: 'quiz-atten/:category_name', component: QuizAttenComponentComponent}
 
 ];
 

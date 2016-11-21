@@ -1,5 +1,18 @@
-<div class="center-align">
-  <ul>
-    <li *ngFor="let categoryName of categoryList">{{categoryName}}</li>
-  </ul>
+<div class="container text-center">
+  <div class="p-t-120">
+    <h1 class="upper-class">Choose a Category</h1>
+    <div class="m-l-100 m-r-100 card-list">
+      <div class="row">
+        <div class="col-md-6" *ngFor="let categoryName of categoryList">
+          <div class="card">
+            <div class="card-block">
+              <h2 data-letters="T"></h2>
+              <h2 class="card-title">{{categoryName}}</h2>
+              <button class="btn btn-primary btn-circle pull-right" [routerLink]="['/quiz-atten/'+categoryName]">Go</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

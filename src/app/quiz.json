@@ -13,27 +13,27 @@
         "answerIndex": 2
       },
       {
-        "question": "5 + 7 = ?",
+        "question": "A sum of money at simple interest amounts to Rs. 815 in 3 years and to Rs. 854 in 4 years. The sum is:",
         "options": [
-          "10",
-          "11",
-          "12",
-          "13"
+          "Rs. 650",
+          "Rs. 750",
+          "Rs. 600",
+          "Rs. 800"
         ],
         "answerIndex": 2
       },
       {
-        "question": "5 + 7 = ?",
+        "question": "Mr. Thomas invested an amount of Rs. 13,900 divided in two different schemes A and B at the simple interest rate of 14% p.a. and 11% p.a. respectively. If the total amount of simple interest earned in 2 years be Rs. 3508, what was the amount invested in Scheme B?",
         "options": [
-          "10",
-          "11",
-          "12",
-          "13"
+          "Rs. 6400",
+          "Rs. 8000",
+          "Rs. 6200",
+          "Rs. 7000"
         ],
         "answerIndex": 2
       },
       {
-        "question": "5 + 7 = ?",
+        "question": "A sum fetched a total simple interest of Rs. 4016.25 at the rate of 9 p.c.p.a. in 5 years. What is the sum?",
         "options": [
           "10",
           "11",
@@ -48,7 +48,7 @@
     "category_name": "physics",
     "questions": [
       {
-        "question": "5 + 7 = ?",
+        "question": "How much time will it take for an amount of Rs. 450 to yield Rs. 81 as interest at 4.5% per annum of simple interest?",
         "options": [
           "10",
           "11",
