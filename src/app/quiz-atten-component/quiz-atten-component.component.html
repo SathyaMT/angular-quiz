@@ -11,8 +11,8 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-md-6" *ngFor="let option of question.options ,let index = index" (click)="nextQuestion(index)" id="index" [style.opacity]="opacityValue" [style.display]="'block'">
-    <a href="javascript:void(0)" class="btn btn-raised btn-primary">{{option}} </a>
+  <div class="col-md-6" *ngFor="let option of question.options ,let index = index" (click)="nextQuestion(index)" id="index"  [style.display]="'block'" >
+    <a href="javascript:void(0)" class="btn btn-raised btn-primary" [ngClass]="{'disable-element' : !userNotSelectedAnswer && (question.answerIndex != index) }">{{option}} </a>
   </div>
 </div>
 <h1 class="text-center p-t-20">Boosters</h1>

@@ -45,3 +45,7 @@ a.btn.btn-raised.btn-info {
 span.sr-only {
   position: relative !important;
 }
+.disable-element {
+  opacity: 0.4;
+  cursor: not-allowed;
+}

@@ -18,7 +18,6 @@ export class QuizAttenComponentComponent implements OnInit, OnDestroy {
   private questionTime : number = 20;
   private clearTime : any = false;
   private questionNumber: number;
-  private opacityValue:number = 1;
   private userNotSelectedAnswer: boolean = true;
   private progressBarWidth: number = 100;
   private reduceProgressBarWidth : number = this.progressBarWidth/this.questionTime;
@@ -44,7 +43,6 @@ export class QuizAttenComponentComponent implements OnInit, OnDestroy {
     });
   }
   nextQuestion(currentQuestionAnswer) {
-    this.opacityValue = 0.4;
     this.userNotSelectedAnswer = false;
     if(currentQuestionAnswer == this.question.answerIndex) {
       this.coinService.addCoinCount(5);
@@ -56,7 +54,6 @@ export class QuizAttenComponentComponent implements OnInit, OnDestroy {
         this.progressBarWidth = 100;
         this.timer();
         this.questionNumber++;
-        this.opacityValue = 1;
         this.userNotSelectedAnswer = true;
       } else {
         this.questionTime = null;
@@ -111,6 +108,7 @@ export class QuizAttenComponentComponent implements OnInit, OnDestroy {
     }
 
   }
+
 
 
 
